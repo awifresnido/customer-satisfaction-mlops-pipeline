@@ -1,0 +1,11 @@
+zenml==0.96.1
+mlflow
+pandas
+numpy
+scikit-learn
+matplotlib
+jupyter
+pytest
+black
+ruff
+pre-commit
