@@ -1,0 +1,51 @@
+# Python
+___pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Conda
+.conda/
+
+# IDE
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.logs
+
+# OS
+.DS_Store
+Thumbs.db
+
+# MLflow
+mlruns/
+
+#ZenML
+.zen/
+
+# Artifacts
+artifacts/
+
+# Data
+data/raw/
+data/processed/
+
+# Testing
+.pytest_cache/
+
+#Coverage
+.coverage
+htmlcov/
+
+# Build
+dist/
+build/
+*.egg-info/
