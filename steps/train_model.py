@@ -1,12 +1,14 @@
 """ZenML step for model training."""
 
+import mlflow
+import mlflow.sklearn as mlflow_sklearn
 from sklearn.ensemble import RandomForestRegressor
 from zenml import step
 
 from customer_satisfaction.models.trainer import RandomForestTrainer
 
 
-@step
+@step(experiment_tracker=True)
 def train_model(X_train, y_train) -> RandomForestRegressor:
     """Train a Random Forest model.
     Args:
@@ -18,4 +20,10 @@ def train_model(X_train, y_train) -> RandomForestRegressor:
     """
     trainer = RandomForestTrainer()
 
-    return trainer.train(X_train=X_train, y_train=y_train)
+    model = trainer.train(X_train=X_train, y_train=y_train)
+    mlflow.log_param("n_estimators", trainer.n_estimators)
+    mlflow.log_param("random_state", trainer.random_state)
+
+    mlflow_sklearn.log_model(sk_model=model, artifact_path="model")
+
+    return model
