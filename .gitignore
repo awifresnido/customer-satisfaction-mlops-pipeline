@@ -1,5 +1,5 @@
 # Python
-___pycache__/
+__pycache__/
 *.py[cod]
 *.pyo
 
@@ -27,6 +27,7 @@ Thumbs.db
 
 # MLflow
 mlruns/
+*.db
 
 #ZenML
 .zen/
