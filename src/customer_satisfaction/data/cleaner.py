@@ -22,7 +22,7 @@ class DataCleaner:
         logger.info("Starting data cleaning...")
 
         try:
-            df.drop(
+            df = df.drop(
                 columns=[
                     "order_approved_at",
                     "order_delivered_carrier_date",
